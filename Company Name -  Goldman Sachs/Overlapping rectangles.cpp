@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+
+// https://practice.geeksforgeeks.org/problems/overlapping-rectangles1924/1/
+
+class Solution{
+  public:
+  int doOverlap(int L1[], int R1[], int L2[], int R2[]){
+    if(R1[0] < L2[0] || R2[0] < L1[0]) return 0;
+    else if(R1[1] > L2[1] || R2[1] > L1[1]) return 0;
+
+    return 1;
+  }
+};
