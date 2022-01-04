@@ -13,10 +13,10 @@ public:
 	ull getNthUglyNo(int n) {
 	    ull i(1),i2(0),i3(0),i5(0);
 
-		vector<int> ugly(n);
+		vector<ull> ugly(n);
 		ugly[0] = 1;
 
-		ull nm2(ugly[i2]),nm3(ugly[i3]),nm5(ugly[i5]);
+		ull nm2 = 2*ugly[i2],nm3 = 3*ugly[i3],nm5 = 5*ugly[i5];
 
 		for(int i = 1;i<n;i++){
 			ull nexti = min({nm2,nm3,nm5});
@@ -24,15 +24,15 @@ public:
 
 			if(nexti == nm2){
 				i2++;
-				nm2 = ugly[i2];
+				nm2 = 2*ugly[i2];
 			}
 			if(nexti == nm3){
 				i3++;
-				nm3 = ugly[i3];
+				nm3 = 3*ugly[i3];
 			}
 			if(nexti == nm5){
 				i5++;
-				nm5 = ugly[i5];
+				nm5 = 5*ugly[i5];
 			}
 		}
 
